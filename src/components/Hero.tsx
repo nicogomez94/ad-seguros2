@@ -50,10 +50,10 @@ export default function Hero() {
               </div>
 
               <h1 className="text-5xl md:text-7xl font-sans font-black text-ad-blue dark:text-white leading-[1.1] mb-6">
-                {t('hero.title1')}<span style={{ color: '#1e309b' }} className="italic font-light">{t('hero.titleItalic')}</span><br/>
+                {t('hero.title1')}<span className="italic font-light text-[#1e309b] dark:text-[#9fb2ff]">{t('hero.titleItalic')}</span><br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00334e] via-[#00334e] to-[#00e5bc] dark:from-white dark:via-slate-100 dark:to-[#00e5bc]">{t('hero.title2')}</span>
               </h1>
-              <p style={{ color: '#000000' }} className="text-lg max-w-xl mb-10 leading-relaxed font-semibold">
+              <p className="text-lg max-w-xl mb-10 leading-relaxed font-semibold text-slate-700 dark:text-slate-300">
                 {t('hero.subtitle')}
               </p>
 
@@ -72,17 +72,17 @@ export default function Hero() {
                 </div>
               </div>
 
-            <div className="inline-flex w-fit max-w-full flex-wrap gap-8 p-6 bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/60 dark:border-white/10 shadow-sm">
-              <div className="flex flex-col">
-                <span className="text-3xl font-black text-ad-blue dark:text-white">{t('hero.stat1Val')}</span>
-                <span style={{ color: '#233222' }} className="text-[9px] font-black uppercase tracking-widest">{t('hero.stat1Label')}</span>
+              <div className="inline-flex w-fit max-w-full flex-wrap gap-8 p-6 bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/60 dark:border-white/10 shadow-sm">
+                <div className="flex flex-col">
+                  <span className="text-3xl font-black text-ad-blue dark:text-white">{t('hero.stat1Val')}</span>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400">{t('hero.stat1Label')}</span>
+                </div>
+                <div className="w-px h-10 bg-slate-200 dark:bg-white/10" />
+                <div className="flex flex-col">
+                  <span className="text-3xl font-black text-ad-blue dark:text-white">{t('hero.stat2Val')}</span>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400">{t('hero.stat2Label')}</span>
+                </div>
               </div>
-              <div className="w-px h-10 bg-slate-200 dark:bg-white/10" />
-              <div className="flex flex-col">
-                <span className="text-3xl font-black text-ad-blue dark:text-white">{t('hero.stat2Val')}</span>
-                <span style={{ color: '#05070b' }} className="text-[9px] font-black uppercase tracking-widest">{t('hero.stat2Label')}</span>
-              </div>
-            </div>
             </motion.div>
           </div>
 

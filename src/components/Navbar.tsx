@@ -388,12 +388,12 @@ export default function Navbar() {
                 duration: 1.5,
                 ease: "easeInOut"
               }}
-              className="w-full py-2 rounded-2xl text-center font-black uppercase tracking-widest text-base md:text-lg transition-all bg-ad-blue dark:bg-slate-900 border border-slate-700/50 shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] flex items-center justify-center gap-1.5"
+              className="w-full pt-2.5 pb-1.5 rounded-2xl text-center font-black uppercase tracking-widest text-base md:text-lg transition-all bg-ad-blue dark:bg-slate-900 border border-slate-700/50 shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] flex items-center justify-center gap-1.5"
             >
               <img
                 src={pasAlertLogo}
                 alt="PAS Alert"
-                className="logo-pas-alert-mobile"
+                className="logo-pas-alert-mobile translate-y-[1px]"
               />
             </motion.a>
           </div>
