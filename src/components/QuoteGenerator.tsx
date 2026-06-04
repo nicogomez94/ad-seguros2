@@ -149,7 +149,7 @@ export default function QuoteGenerator() {
   };
 
   return (
-    <div className="bg-white dark:bg-[#001f30] rounded-[2.5rem] shadow-2xl border border-slate-100 dark:border-white/5 p-8 w-full max-w-md relative z-20 overflow-hidden transition-colors pb-[32px] xl:mr-[-100px]">
+    <div className="bg-white dark:bg-[#001f30] p-8 md:p-10 w-full h-full relative z-20 overflow-hidden transition-colors">
       <div className="flex items-center gap-3 mb-8">
         <div className="w-10 h-10 bg-ad-blue dark:bg-ad-cyan rounded-xl flex items-center justify-center text-ad-cyan dark:text-ad-blue shadow-inner transition-colors">
           <ShieldCheck size={24} />

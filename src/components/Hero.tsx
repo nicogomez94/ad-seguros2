@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2, Shield } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import QuoteGenerator from './QuoteGenerator';
 import { useTranslation } from '../context/LanguageContext';
 import heroBg from '../assets/images/office_workers_bg_1780030661226.png';
@@ -36,41 +36,15 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-ad-blue/5 dark:bg-ad-cyan/5 blur-3xl pointer-events-none" />
       
       <div className="w-full max-w-[1550px] mx-auto px-6 md:px-12 xl:px-20 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 w-full">
-          <div 
-            style={{
-              paddingLeft: '40px',
-              paddingRight: '40px',
-              paddingTop: '40px',
-              paddingBottom: '40px',
-              marginLeft: '-9px',
-              marginBottom: '-2px',
-              marginRight: '0px',
-              marginTop: '0px',
-              borderStyle: 'ridge',
-              borderRadius: '44px',
-              borderWidth: '1px',
-              height: '720.81px',
-              width: '570.397px',
-              backdropFilter: 'blur(16px)',
-              WebkitBackdropFilter: 'blur(16px)',
-            }}
-            className="w-full lg:w-[50%] xl:w-[46%] shrink-0 text-left bg-white/15 dark:bg-[#001f30]/25 border-white/20 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.06)]"
-          >
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-0 w-full overflow-hidden rounded-[2.75rem] border border-white/25 dark:border-white/10 bg-white/20 dark:bg-[#001f30]/30 shadow-[0_20px_70px_-30px_rgba(0,0,0,0.45)] backdrop-blur-2xl">
+          <div className="w-full lg:w-[56%] xl:w-[58%] shrink-0 text-left px-8 py-10 md:px-12 md:py-14 xl:px-16 xl:py-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              style={{
-                height: '666.794px',
-                width: '547.365px'
-              }}
-              className="w-full xl:max-w-[729px]"
+              className="w-full h-full flex flex-col justify-center"
             >
-              <div 
-                style={{ marginBottom: '25px', marginRight: '0px', paddingRight: '12px' }}
-                className="inline-flex items-center gap-2 px-3 py-1 bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 rounded-full shadow-sm"
-              >
+              <div className="mb-6 inline-flex w-fit items-center gap-2 px-3 py-1 bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 rounded-full shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-ad-cyan animate-pulse"></span>
                 <span className="text-[10px] font-black text-ad-blue dark:text-white uppercase tracking-widest not-italic text-left">{t('hero.matricula')}</span>
               </div>
@@ -98,21 +72,7 @@ export default function Hero() {
                 </div>
               </div>
 
-            {/* Stats Section with Glass Effect */}
-            <div 
-              style={{
-                paddingTop: '24px',
-                paddingLeft: '12px',
-                paddingRight: '12px',
-                borderStyle: 'groove',
-                borderRadius: '39px',
-                marginLeft: '-40px',
-                marginRight: '-6px',
-                marginBottom: '-5px',
-                marginTop: '-15px',
-              }}
-              className="flex gap-8 p-6 bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/60 dark:border-white/10 inline-flex shadow-sm"
-            >
+            <div className="inline-flex w-fit max-w-full flex-wrap gap-8 p-6 bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-[2rem] border border-white/60 dark:border-white/10 shadow-sm">
               <div className="flex flex-col">
                 <span className="text-3xl font-black text-ad-blue dark:text-white">{t('hero.stat1Val')}</span>
                 <span style={{ color: '#233222' }} className="text-[9px] font-black uppercase tracking-widest">{t('hero.stat1Label')}</span>
@@ -126,22 +86,13 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <div className="w-full lg:w-[48%] xl:w-[45%] flex justify-center lg:justify-end">
+          <div className="w-full lg:w-[44%] xl:w-[42%] flex items-stretch justify-center lg:justify-end bg-white/70 dark:bg-[#001f30]/60 border-t lg:border-t-0 lg:border-l border-white/50 dark:border-white/10">
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-full flex justify-center lg:justify-end"
+              className="relative w-full flex items-stretch justify-center lg:justify-end p-0"
             >
-              {/* Floating elements for dynamic feel */}
-              <motion.div 
-                animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-10 -left-10 z-0 opacity-20 hidden lg:block"
-              >
-                <Shield size={120} className="text-ad-cyan" />
-              </motion.div>
-
               <QuoteGenerator />
             </motion.div>
           </div>

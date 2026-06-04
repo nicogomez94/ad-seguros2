@@ -52,7 +52,6 @@ export default function Navbar() {
   const navLinks = [
     { name: t('nav.inicio'), href: '#inicio' },
     { name: t('nav.servicios'), href: '#servicios' },
-    { name: t('nav.pasAlert'), href: '#pas-alert', isStatCard: true },
     { name: t('nav.productores'), href: '#productores' },
     { name: t('nav.faq'), href: '#faq' },
     { name: t('nav.nosotros'), href: '#nosotros' },
@@ -212,7 +211,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`transition-all duration-300 hover:text-ad-cyan relative py-1 ${
                     isActive ? 'text-ad-blue dark:text-white' : 'text-slate-400 dark:text-slate-300'
-                  } ${link.isStatCard ? 'font-black' : ''}`}
+                  }`}
                 >
                   {link.name}
                   {isActive && (
