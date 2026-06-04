@@ -1,5 +1,6 @@
-import { Shield, Instagram, Linkedin, MessageCircle, MapPin, Mail, Phone } from 'lucide-react';
+import { Instagram, Linkedin, MessageCircle, MapPin, Mail, Phone } from 'lucide-react';
 import { useTranslation } from '../context/LanguageContext';
+import adLogo from '../../4.svg';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -10,12 +11,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 xl:gap-12 mb-20">
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-8">
-              <div className="w-10 h-10 bg-ad-cyan rounded-lg flex items-center justify-center text-ad-blue">
-                <Shield size={24} strokeWidth={2.5} />
-              </div>
-              <span className="text-2xl font-sans font-black tracking-tighter">
-                AD <span className="text-ad-cyan">SEGUROS</span>
-              </span>
+              <img
+                src={adLogo}
+                alt="AD Seguros"
+                className="logo-ad-footer"
+              />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-10">
               {t('footer.shortDesc')}

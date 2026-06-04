@@ -1,9 +1,11 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Shield, Menu, X, Sun, Moon, Globe, Search, ArrowRight } from 'lucide-react';
+import { Menu, X, Sun, Moon, Globe, Search, ArrowRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { useTranslation } from '../context/LanguageContext';
+import adLogo from '../../4.svg';
+import pasAlertLogo from '../../2.svg';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -176,27 +178,23 @@ export default function Navbar() {
 
   return (
     <nav id="navbar" className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-ad-dark/85 backdrop-blur-md border-b border-gray-100 dark:border-white/5 transition-colors duration-300">
-      <div className="w-full max-w-[1550px] mx-auto px-6 md:px-12 xl:px-20 h-20 flex justify-between items-center">
+      <div className="w-full max-w-[1550px] mx-auto px-6 md:px-8 xl:px-12 h-20 flex items-center gap-6">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 shrink-0"
         >
           <Link to="#inicio" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-ad-blue dark:bg-ad-cyan rounded-lg flex items-center justify-center text-ad-cyan dark:text-ad-blue transition-colors">
-              <Shield size={24} strokeWidth={2.5} />
-            </div>
-            <span className="text-2xl font-display font-bold text-ad-blue dark:text-white tracking-tight">
-              AD <span className="text-ad-cyan">SEGUROS</span>
-            </span>
+            <img
+              src={adLogo}
+              alt="AD Seguros"
+              className="logo-ad-nav"
+            />
           </Link>
         </motion.div>
 
         {/* Desktop Nav */}
-        <div 
-          style={{ paddingRight: '-9px', paddingLeft: '-3px', marginLeft: '0px', marginRight: '-94px', marginTop: '0px' }}
-          className="hidden md:flex items-center gap-6 text-sm font-semibold uppercase tracking-wider"
-        >
+        <div className="hidden md:flex flex-1 min-w-0 items-center justify-center gap-3 xl:gap-4 text-sm font-semibold uppercase tracking-wider">
           {navLinks.map((link, idx) => {
             const isActive = activeHash === link.href;
             return (
@@ -230,7 +228,7 @@ export default function Navbar() {
             onClick={() => setIsSearchOpen(true)}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="ml-2 flex items-center gap-2 bg-slate-50 hover:bg-slate-100 dark:bg-white/5 dark:hover:bg-white/10 text-slate-400 dark:text-slate-300 border border-slate-200/50 dark:border-white/5 rounded-full px-4 py-2.5 text-xs font-semibold cursor-pointer shadow-sm hover:scale-105 transition-all text-left w-36 xl:w-44 shrink-0"
+            className="ml-1 flex items-center gap-2 bg-slate-50 hover:bg-slate-100 dark:bg-white/5 dark:hover:bg-white/10 text-slate-400 dark:text-slate-300 border border-slate-200/50 dark:border-white/5 rounded-full px-3 py-2.5 text-xs font-semibold cursor-pointer shadow-sm hover:scale-105 transition-all text-left w-32 xl:w-40 shrink-0"
             title={language === 'en' ? 'Search sections (Ctrl+K)' : 'Buscar secciones (Ctrl+K)'}
           >
             <Search size={14} className="text-slate-500 dark:text-ad-cyan shrink-0" />
@@ -243,7 +241,7 @@ export default function Navbar() {
             onClick={toggleTheme}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="ml-2 p-2.5 rounded-full bg-slate-50 hover:bg-slate-150 dark:bg-white/5 dark:hover:bg-white/10 text-ad-blue dark:text-ad-cyan transition-all border border-slate-200/50 dark:border-white/5 flex items-center justify-center cursor-pointer shadow-sm hover:scale-105 shrink-0"
+            className="ml-0 p-2.5 rounded-full bg-slate-50 hover:bg-slate-150 dark:bg-white/5 dark:hover:bg-white/10 text-ad-blue dark:text-ad-cyan transition-all border border-slate-200/50 dark:border-white/5 flex items-center justify-center cursor-pointer shadow-sm hover:scale-105 shrink-0"
             title={`${theme === 'light' ? t('nav.toggleThemeDark') : t('nav.toggleThemeLight')} (Alt+T)`}
             aria-label="Toggle theme"
           >
@@ -259,7 +257,7 @@ export default function Navbar() {
             onClick={toggleLanguage}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="ml-2 px-3 py-2.5 rounded-full bg-slate-50 hover:bg-slate-150 dark:bg-white/5 dark:hover:bg-white/10 text-ad-blue dark:text-ad-cyan transition-all border border-slate-200/50 dark:border-white/5 flex items-center gap-1.5 cursor-pointer shadow-sm hover:scale-105 text-xs font-bold shrink-0"
+            className="ml-0 px-3 py-2.5 rounded-full bg-slate-50 hover:bg-slate-150 dark:bg-white/5 dark:hover:bg-white/10 text-ad-blue dark:text-ad-cyan transition-all border border-slate-200/50 dark:border-white/5 flex items-center gap-1.5 cursor-pointer shadow-sm hover:scale-105 text-xs font-bold shrink-0"
             title={t('nav.toggleLang')}
             aria-label="Toggle language"
           >
@@ -285,20 +283,18 @@ export default function Navbar() {
               opacity: { duration: 0.3 },
               default: { ease: "easeOut" }
             }}
-            className="ml-2 px-6 py-2.5 rounded-full text-sm md:text-base font-black uppercase tracking-widest bg-ad-blue dark:bg-slate-900 border border-slate-700/50 hover:bg-[#00273d] dark:hover:bg-[#001f30] transition-all shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
+            className="ml-0 px-1.5 py-0.5 rounded-full text-sm md:text-base font-black uppercase tracking-widest bg-ad-blue dark:bg-slate-900 border border-slate-700/50 hover:bg-[#00273d] dark:hover:bg-[#001f30] transition-all shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
           >
-            <span className="text-white uppercase font-black">PAS</span>
-            <span 
-              className="text-red-600 dark:text-red-500 uppercase font-black tracking-wider animate-pulse"
-              style={{ textShadow: '-1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff' }}
-            >
-              ALERT
-            </span>
+            <img
+              src={pasAlertLogo}
+              alt="PAS Alert"
+              className="logo-pas-alert-nav"
+            />
           </motion.a>
         </div>
 
         {/* Mobile Toggle & Theme Switcher (Mobile) */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden ml-auto flex items-center gap-3">
           {/* Mobile Search Button */}
           <button
             onClick={() => setIsSearchOpen(true)}
@@ -392,15 +388,13 @@ export default function Navbar() {
                 duration: 1.5,
                 ease: "easeInOut"
               }}
-              className="w-full py-4 rounded-2xl text-center font-black uppercase tracking-widest text-base md:text-lg transition-all bg-ad-blue dark:bg-slate-900 border border-slate-700/50 shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] flex items-center justify-center gap-1.5"
+              className="w-full py-2 rounded-2xl text-center font-black uppercase tracking-widest text-base md:text-lg transition-all bg-ad-blue dark:bg-slate-900 border border-slate-700/50 shadow-[0_0_15px_rgba(239,68,68,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] flex items-center justify-center gap-1.5"
             >
-              <span className="text-white uppercase font-black">PAS</span>
-              <span 
-                className="text-red-600 dark:text-red-500 uppercase font-black tracking-wider animate-pulse"
-                style={{ textShadow: '-1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff' }}
-              >
-                ALERT
-              </span>
+              <img
+                src={pasAlertLogo}
+                alt="PAS Alert"
+                className="logo-pas-alert-mobile"
+              />
             </motion.a>
           </div>
         </motion.div>

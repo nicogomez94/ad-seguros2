@@ -31,9 +31,50 @@
   body {
     @apply bg-slate-50 text-slate-800 dark:bg-ad-dark dark:text-slate-100 antialiased transition-colors duration-300;
   }
+
+  :root {
+    --ad-logo-nav-height: 64px;
+    --ad-logo-footer-height: 64px;
+    --pas-logo-nav-height: 50px;
+    --pas-logo-mobile-height: 44px;
+    --pas-logo-section-height: 144px;
+  }
 }
 
 @layer utilities {
+  .logo-ad-nav {
+    margin-top: 15px;
+    height: var(--ad-logo-nav-height);
+    width: auto;
+    object-fit: contain;
+  }
+
+  .logo-ad-footer {
+    height: var(--ad-logo-footer-height);
+    width: auto;
+    object-fit: contain;
+  }
+
+  .logo-pas-alert-nav {
+    margin-top: 5px;
+    height: var(--pas-logo-nav-height);
+    width: auto;
+    object-fit: contain;
+  }
+
+  .logo-pas-alert-mobile {
+    height: var(--pas-logo-mobile-height);
+    width: auto;
+    object-fit: contain;
+  }
+
+  .logo-pas-alert-section {
+    height: var(--pas-logo-section-height);
+    width: auto;
+    max-width: min(100%, 430px);
+    object-fit: contain;
+  }
+
   .shimmer {
     @apply relative overflow-hidden bg-slate-100;
   }

@@ -4,6 +4,7 @@ import { BellRing, Users, Zap, Check, ArrowRight } from 'lucide-react';
 import { useTranslation } from '../context/LanguageContext';
 import alejandroPortrait from '../assets/images/alejandro_diaz_portrait_1779820713310.png';
 import notebookPasAlert from '../assets/images/notebook_pas_alert_1779840665511.png';
+import pasAlertLogo from '../../2.svg';
 
 export default function PASAlert() {
   const { t } = useTranslation();
@@ -102,20 +103,18 @@ export default function PASAlert() {
               <span className="px-4 py-1.5 bg-ad-cyan text-ad-blue text-xs font-black uppercase tracking-widest rounded-full shadow-sm">
                 {t('pas.exclusivo')}
               </span>
-              <h2 className="text-5xl md:text-7xl font-display font-black text-white mt-6 mb-8 italic flex items-center gap-3 flex-wrap">
-                <span>PAS</span>
-                <motion.span 
-                  className="text-red-600 font-black inline-block"
-                  style={{ textShadow: '-1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff' }}
+              <h2 className="mt-6 mb-8">
+                <motion.img
+                  src={pasAlertLogo}
+                  alt="PAS Alert"
+                  className="logo-pas-alert-section drop-shadow-[0_0_20px_rgba(239,68,68,0.28)]"
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{
                     repeat: Infinity,
                     duration: 1.5,
                     ease: "easeInOut"
                   }}
-                >
-                  ALERT
-                </motion.span>
+                />
               </h2>
               <p className="text-xl text-gray-300 mb-10 leading-relaxed font-light">
                 {t('pas.toolDescription')}
@@ -272,4 +271,3 @@ export default function PASAlert() {
     </section>
   );
 }
-
