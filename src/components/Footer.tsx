@@ -115,12 +115,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <span className="text-[10px] text-slate-500 uppercase tracking-widest">{t('footer.rightsReserved')}</span>
-          <div className="flex gap-8 items-center">
-            <span className="text-[10px] text-white/50 font-bold tracking-[0.2em] uppercase">{t('footer.valuesHeader')}</span>
-            <p className="text-[10px] text-slate-500">BY ALEJANDRO DIAZ</p>
+        <div className="pt-8 border-t border-white/5 flex flex-col items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8 w-full">
+            <span className="text-[10px] text-slate-500 uppercase tracking-widest text-center md:text-left">{t('footer.rightsReserved')}</span>
+            <span className="text-[10px] text-white/50 font-bold tracking-[0.2em] uppercase text-center md:text-right">{t('footer.valuesHeader')}</span>
           </div>
+          <a
+            href="https://zigodev.com.ar"
+            target="_blank"
+            rel="noopener"
+            className="text-[10px] text-slate-500 hover:text-ad-cyan transition-colors duration-300 uppercase tracking-[0.2em] text-center"
+          >
+            {t('footer.credit')}
+          </a>
         </div>
       </div>
     </footer>

@@ -168,6 +168,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.rightsReserved': 'AD SEGUROS © 2026 - Todos los derechos reservados',
     'footer.valuesHeader': 'Seguridad • Transparencia • Innovación',
     'footer.shortDesc': 'Protección profesional y gestión inteligente para asegurar lo que más valorás. Respaldo total bajo Matrícula SSN 107.126.',
+    'footer.credit': 'Hecho por ZigoDev',
 
     // Quote Generator
     'quote.title': 'Cotizador Rápido',
@@ -388,6 +389,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.rightsReserved': 'AD SEGUROS © 2026 - All rights reserved',
     'footer.valuesHeader': 'Security • Transparency • Innovation',
     'footer.shortDesc': 'Professional protection and smart management to secure what you value most. Fully backed under SSN License 107.126.',
+    'footer.credit': 'Made by ZigoDev',
 
     // Quote Generator
     'quote.title': 'Quick Calculator',
