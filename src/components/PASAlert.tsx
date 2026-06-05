@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { BellRing, Users, Zap, Check, ArrowRight } from 'lucide-react';
 import { useTranslation } from '../context/LanguageContext';
-import alejandroPortrait from '../assets/images/alejandro_diaz_portrait_1779820713310.png';
+import alejandroPortrait from '../../ale.jpeg';
 import notebookPasAlert from '../assets/images/notebook_pas_alert_1779840665511.png';
 import pasAlertLogo from '../../2.svg';
 
